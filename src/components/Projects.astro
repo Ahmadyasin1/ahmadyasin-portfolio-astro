@@ -1,0 +1,57 @@
+---
+const projects = [
+  {
+    title: 'Neural Network Visualizer',
+    description: 'Interactive 3D visualization of neural networks in real-time.',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=500&auto=format&fit=crop',
+    tech: ['Three.js', 'TensorFlow.js', 'WebGL', 'React']
+  },
+  {
+    title: 'Quantum ML Platform',
+    description: 'Hybrid quantum-classical machine learning platform for next-gen computing.',
+    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=500&auto=format&fit=crop',
+    tech: ['Python', 'Qiskit', 'FastAPI', 'React']
+  },
+  {
+    title: 'Holographic UI Kit',
+    description: 'Future-ready UI components with holographic and AR capabilities.',
+    image: 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=500&auto=format&fit=crop',
+    tech: ['WebXR', 'Three.js', 'TypeScript', 'GLSL']
+  }
+];
+---
+
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-orbitron font-bold text-center mb-12 cyber-text">
+      Project Nexus
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <div class="cyber-border rounded-lg overflow-hidden group">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark to-transparent" />
+            </div>
+            <div class="p-6 bg-cyber-dark/90 backdrop-blur-md">
+              <h3 class="text-xl font-orbitron mb-3 text-cyber-blue">{project.title}</h3>
+              <p class="text-cyber-light/80 mb-4">{project.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span class="px-3 py-1 cyber-border text-cyber-blue text-sm rounded-full">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

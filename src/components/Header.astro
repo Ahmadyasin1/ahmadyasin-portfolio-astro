@@ -1,0 +1,30 @@
+---
+const navItems = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' }
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/80 backdrop-blur-md border-b border-cyber-blue/20">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="font-orbitron text-2xl font-bold text-cyber-blue animate-cyber-glow">
+        Ahmad Yasin
+      </a>
+      <ul class="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-cyber-light hover:text-cyber-blue transition-colors duration-200 font-orbitron"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
